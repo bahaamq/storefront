@@ -14,6 +14,8 @@ import { red } from '@material-ui/core/colors';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
+import {useSelector,useDispatch} from 'react-redux'
+import {getProduct} from '../store/actions'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -35,14 +37,22 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function RecipeReviewCard(props) {
+    //Hooks
   const classes = useStyles();
- 
+  const state = useSelector(state => state);
+  const dispatch = useDispatch();
+  
+console.log("STATEE", state)
+
+
+
+ console.log(props)
 
   return (
-    <div class={classes.custom}>
+    <div class={classes.custom} >
 {props.data.map((item)=>{
   return(
-    <Card className={classes.root}>
+    <Card className={classes.root} onClick={()=>dispatch(getProduct(item))}>
     <CardHeader
  
    
@@ -68,3 +78,5 @@ export default function RecipeReviewCard(props) {
 
   );
 }
+
+

@@ -35,9 +35,3 @@ const initialState = {
   }
   
   
-  export function getBased(name) {
-    return {
-      type: 'filterCategory',
-      payload: name
-    }
-  }

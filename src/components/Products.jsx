@@ -1,6 +1,6 @@
 import {React,useEffect} from 'react'
 import {connect} from 'react-redux';
-import {getBased} from '../store/Products'
+import {getBased} from '../store/actions'
 import RecipeReviewCard from './Card'
 
 
@@ -15,17 +15,7 @@ console.log(props.products.activeProducts)
 
 props.products.activeProducts.length>0 &&
 <RecipeReviewCard data={props.products.activeProducts} />
-// props.products.activeProducts.map((item)=>{
-//     return (
-//         <>
-//     <p>{item.name}</p>
-//     <p>{item.description}</p>
-//     <p>{item.inventoryCount}</p>
-// <img src={item.img} alt="random"></img>
-// </>
-    
-//     )
-// })
+
 }
     </div>
   )

@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux';
-import {funActiveCategory} from '../store/Categories'
-import {getBased} from '../store/Products'
+import {funActiveCategory} from '../store/actions'
+import {getBased} from '../store/actions'
 
 import Button from '@material-ui/core/Button';
 
