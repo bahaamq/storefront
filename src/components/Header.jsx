@@ -15,8 +15,7 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import {useSelector,useDispatch} from 'react-redux'
-import {getProduct} from '../store/actions'
-
+import{removeProduct} from '../store/actions'
 const useStyles = makeStyles((theme) => ({
     header: {
         backgroundColor: '#d3d3d3',
@@ -30,7 +29,8 @@ const useStyles = makeStyles((theme) => ({
 export default function RecipeReviewCard(props) {
   const classes = useStyles();
   const state = useSelector(state => state);
-  
+  const dispatch = useDispatch();
+
 console.log("STATEE", state)
 
 
@@ -52,7 +52,11 @@ console.log("STATEE", state)
              
              state.CartReducer.carts.map((item,idx)=>{
                return (
+                 <>
 <li key={idx}> {item.name}</li>
+
+<button onClick={()=>dispatch(removeProduct(item))}> Remove </button>
+</> 
              )})
               
              }

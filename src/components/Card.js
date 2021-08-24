@@ -52,12 +52,14 @@ console.log("STATEE", state)
     <div class={classes.custom} >
 {props.data.map((item)=>{
   return(
-    <Card className={classes.root} onClick={()=>dispatch(getProduct(item))}>
+    <Card className={classes.root}>
     <CardHeader
  
    
       title={item.name}
     />
+        <button onClick={()=>dispatch(getProduct(item))}> Add to cart </button>
+
     <CardMedia
       className={classes.media}
       image={item.img}
