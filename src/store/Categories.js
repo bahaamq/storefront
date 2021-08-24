@@ -33,12 +33,7 @@ const initialState = {
     }
   };
   
-  export const funActiveCategory = (name) => {
-    return {
-      type: 'Active-Category',
-      payload: name,
-    };
-  };
+ 
   
  
   

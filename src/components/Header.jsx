@@ -14,6 +14,8 @@ import { red } from '@material-ui/core/colors';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
+import {useSelector,useDispatch} from 'react-redux'
+import {getProduct} from '../store/actions'
 
 const useStyles = makeStyles((theme) => ({
     header: {
@@ -27,7 +29,10 @@ const useStyles = makeStyles((theme) => ({
 
 export default function RecipeReviewCard(props) {
   const classes = useStyles();
- 
+  const state = useSelector(state => state);
+  
+console.log("STATEE", state)
+
 
   return (
     <div class={classes.custom}>
@@ -35,6 +40,24 @@ export default function RecipeReviewCard(props) {
        
         <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
             Redux-Example
+                    </Typography>
+
+                    <Typography variant="subtitle1" align="right" color="textSecondary" component="p">
+             CArt  {state.CartReducer.count}
+    
+
+          <ul>
+
+             {state.CartReducer.carts.length >0 && 
+             
+             state.CartReducer.carts.map((item,idx)=>{
+               return (
+<li key={idx}> {item.name}</li>
+             )})
+              
+             }
+             </ul>
+
                     </Typography>
       </header>
    
