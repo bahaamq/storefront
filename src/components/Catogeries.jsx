@@ -2,6 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux';
 import {funActiveCategory} from '../store/actions'
 import {getBased} from '../store/actions'
+import {getRemoteData} from '../store/actions';
 
 import Button from '@material-ui/core/Button';
 
@@ -9,8 +10,8 @@ function Catogeries(props) {
 
   function handlclick(category)
   {
-props.funActiveCategory(category)
-props.getBased(category)
+props.funActiveCategory('electronics')
+props.getRemoteData(category)
   }
   return (
     <div>
@@ -33,7 +34,7 @@ const mapStateToProps = (state)=>{
   return {categories:state.categories,products:state.products}
 }
 
-const mapDispatchToProps = {funActiveCategory,getBased};
+const mapDispatchToProps = {funActiveCategory,getBased,getRemoteData};
 
 //HOC??
 export default connect(mapStateToProps,mapDispatchToProps)(Catogeries);
