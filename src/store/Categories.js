@@ -2,9 +2,9 @@
 
 const initialState = {
     Categories: [
-        {name:"Food", display:"Meals", description:" up to 20% Sale"},
-        {name:"Technology", display:"Technology", description:" up to 30% Sale"},
-        {name:"Random", display:"requirements", description:" up to 40% Sale"}
+        {name:"shirts", display:"Meals", description:" up to 20% Sale"},
+        {name:"electronics", display:"electronics", description:" up to 30% Sale"},
+        {name:"console", display:"requirements", description:" up to 40% Sale"}
     ],
         
         

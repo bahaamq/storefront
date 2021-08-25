@@ -16,7 +16,7 @@ import ShareIcon from '@material-ui/icons/Share';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import {useSelector,useDispatch} from 'react-redux'
 import {getProduct} from '../store/actions'
-
+import {postRemoteData}from '../store/actions'
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 500,
@@ -55,21 +55,22 @@ console.log("STATEE", state)
     <Card className={classes.root}>
     <CardHeader
  
-   
+
       title={item.name}
     />
-        <button onClick={()=>dispatch(getProduct(item))}> Add to cart </button>
-
+        <button onClick={()=>dispatch(postRemoteData(item))}> Add to cart </button>
+<p>fddfdf</p>
     <CardMedia
       className={classes.media}
-      image={item.img}
+      image={  
+        item.img
+      }
       title="Paella dish"
     />
     <CardContent>
       <Typography variant="body2" color="textSecondary" component="p">
 {item.description}
-
-      </Typography>
+{item.description}      </Typography>
     </CardContent>
    
   </Card>

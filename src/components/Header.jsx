@@ -1,4 +1,4 @@
-import React from 'react';
+import {React,useEffect} from 'react';
 import { makeStyles, withTheme } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
@@ -16,6 +16,8 @@ import ShareIcon from '@material-ui/icons/Share';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import {useSelector,useDispatch} from 'react-redux'
 import{removeProduct} from '../store/actions'
+import {removeRemoteData}from '../store/actions'
+import {getallRemoteData}from '../store/actions'
 const useStyles = makeStyles((theme) => ({
     header: {
         backgroundColor: '#d3d3d3',
@@ -26,13 +28,17 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
+
 export default function RecipeReviewCard(props) {
   const classes = useStyles();
   const state = useSelector(state => state);
   const dispatch = useDispatch();
 
 console.log("STATEE", state)
-
+//Did mount
+useEffect(() => {
+  dispatch(getallRemoteData())
+}, [])
 
   return (
     <div class={classes.custom}>
@@ -55,7 +61,7 @@ console.log("STATEE", state)
                  <>
 <li key={idx}> {item.name}</li>
 
-<button onClick={()=>dispatch(removeProduct(item))}> Remove </button>
+<button onClick={()=>dispatch(removeRemoteData(item))}> Remove </button>
 </> 
              )})
               
