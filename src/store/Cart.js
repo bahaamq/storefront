@@ -18,6 +18,8 @@ const initialState = {
         carts: state.carts.filter((p) => p !== payload),
         count: state.count - 1,
       };
+      case 'RETURNCARTS':
+        return { carts:payload.results, count:payload.count };
 
       default:
         return state;

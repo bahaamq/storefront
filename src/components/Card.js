@@ -55,11 +55,11 @@ console.log("STATEE", state)
     <Card className={classes.root}>
     <CardHeader
  
-   
+
       title={item.name}
     />
         <button onClick={()=>dispatch(postRemoteData(item))}> Add to cart </button>
-
+<p>fddfdf</p>
     <CardMedia
       className={classes.media}
       image={  
